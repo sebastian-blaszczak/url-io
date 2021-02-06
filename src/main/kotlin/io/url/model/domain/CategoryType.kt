@@ -2,12 +2,13 @@ package io.url.model.domain
 
 import javax.persistence.*
 
-
 @Entity
-data class Category(
+data class CategoryType(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
+    val name: String,
+    val global: Boolean,
     @OneToOne
-    val type: CategoryType,
+    val author: UserAccount
 )

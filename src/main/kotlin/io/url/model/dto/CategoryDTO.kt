@@ -1,4 +1,3 @@
 package io.url.model.dto
 
-class CategoryDTO {
-}
+data class CategoryDTO(val id: Long, val type: CategoryTypeDTO)
