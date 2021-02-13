@@ -10,5 +10,5 @@ data class CategoryType(
     val name: String,
     val global: Boolean,
     @OneToOne
-    val author: UserAccount
+    val userAccount: UserAccount
 )

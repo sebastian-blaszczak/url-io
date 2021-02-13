@@ -1,4 +1,7 @@
 package io.url.dao
 
-class UserAccountDAO {
+import io.url.model.domain.UserAccount
+
+interface UserAccountDAO {
+    fun create(user: UserAccount): Long
 }
