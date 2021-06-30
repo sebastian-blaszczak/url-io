@@ -13,3 +13,5 @@ pluginManagement {
 	}
 }
 rootProject.name = "url"
+include("backend")
+include("frontend")

@@ -2,7 +2,6 @@ package io.url.service.implementation
 
 import io.url.dao.UserAccountDAO
 import io.url.model.dto.UserAccountDTO
-import io.url.model.mapper.UrlMapper
 import io.url.model.mapper.UserAccountMapper
 import io.url.service.UserAccountService
 import org.mapstruct.factory.Mappers
