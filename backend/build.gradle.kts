@@ -21,6 +21,7 @@ repositories {
 }
 
 dependencies {
+    runtimeOnly(project(":frontend"))
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -34,7 +35,6 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.29.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.29.1")
     implementation("org.jetbrains.exposed:exposed-spring-boot-starter:0.29.1")
-
 
     annotationProcessor("org.mapstruct:mapstruct-processor:1.4.2.Final")
 

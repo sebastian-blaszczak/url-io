@@ -1,31 +1,33 @@
 plugins {
-    id("com.moowork.node") version "1.3.1"
-
+    id("org.siouan.frontend") version "1.2.1"
+    id("java")
 }
 
-apply(plugin = "java")
-apply(plugin = "com.moowork.node")
+group = "com.kotlin-spring-vue"
+version = "0.0.1-SNAPSHOT"
 
-node {
-    version = "12.9.1"
-    download = true
+java {
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-tasks {
-    named<com.moowork.gradle.node.npm.NpmTask>("bundle") {
-        setArgs(listOf("run", "build"))
-    }
-    named<com.moowork.gradle.node.npm.NpmTask>("run") {
-        setArgs(listOf("start"))
-    }
-    named<Jar>("webArchive") {
-        from(fileTree("build")) {
-            into("META-INF/resources")
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
         }
     }
 }
 
-tasks.named("jar") {
-    dependsOn("bundle")
-    finalizedBy("webArchive")
+frontend {
+    nodeVersion.set("10.16.0")
+    cleanScript.set("run clean")
+    installScript.set("install")
+    assembleScript.set("run build")
+}
+
+tasks.named("jar", Jar::class) {
+    dependsOn("assembleFrontend")
+    from("$buildDir/dist")
+    into("static")
 }
