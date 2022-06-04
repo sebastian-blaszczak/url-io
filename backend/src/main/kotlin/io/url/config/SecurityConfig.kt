@@ -21,6 +21,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
             .and()
             .authorizeRequests()
 //            .antMatchers("/api/**").permitAll()
+            .antMatchers("/static/**").permitAll()
             .anyRequest().permitAll()
             .and()
             .cors()
