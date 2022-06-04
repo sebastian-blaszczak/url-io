@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "io.url"
-version = "0.0"
+version = "1.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
